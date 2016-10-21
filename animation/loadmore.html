@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Load More</title>
+    <link rel="stylesheet" href="../assets/css/core.css">
+    <link rel="icon" type="image/png" href="../assets/img/icon.png" sizes="16x16">
+    <link rel="icon" href="../assets/img/icon.png">
+    <meta name="description" content="Go Get Em All">
+    <style>
+
+        .startHere li {
+            display:none;
+            padding: 10px;
+            border-width: 0 1px 1px 0;
+            border-style: solid;
+            border-color: #fff;
+            box-shadow: 0 1px 1px #ccc;
+            margin-bottom: 5px;
+            background-color: #f1f1f1;
+        }
+
+        a#loadMore, a#loadMore:visited {
+            color: white;
+            text-decoration: none;
+            display: block;
+            margin: 10px 0;
+        }
+        #loadMore {
+            padding: 10px;
+            text-align: center;
+            background-color: #33739E;
+            color: #fff;
+            border-width: 0 1px 1px 0;
+            border-style: solid;
+            border-color: #fff;
+            box-shadow: 0 1px 1px #ccc;
+            transition: all 600ms ease-in-out;
+            -webkit-transition: all 600ms ease-in-out;
+            -moz-transition: all 600ms ease-in-out;
+            -o-transition: all 600ms ease-in-out;
+        }
+    </style>
+</head>
+<body>
+<div class="container-fluid main_page">
+    <header class="page_header">
+        <div class="container-fluid">
+            <h1 class="page_heading ">Load More<span><br> Do your thing and don't care if they like it.</span></h1>
+        </div>
+    </header>
+</div>
+
+<div class="container-fluid main_info">
+    <ul class="intro breadcrumb sticky">
+        <li> <a href="#list" class="menuGroup">
+            <span class="nav-text">List</span>
+        </a></li>
+        <li> <a href="#note" class="menuGroup">
+            <span class="nav-text">Notes</span>
+        </a></li>
+        <li> <a href="#usage" class="menuGroup">
+            <span class="nav-text">Usage</span>
+        </a></li>
+    </ul>
+
+    <div id="list">
+        <h1>List</h1>
+        <br>
+
+        <div class="container">
+            <ul class="nav nav-tabs">
+                <li class="active"><a href="" id="desktop" data-toggle="tab">Desktop 1200</a></li>
+                <li><a href="" id="tablet" data-toggle="tab">Tablet 768 px (Portrait)</a></li>
+                <li><a href="" id="mobile" data-toggle="tab">Mobile 375 px</a></li>
+            </ul>
+            <div class="active" id="responsiveBox" style="margin: 0 auto;background-color: #e8e8e8">
+                <div class="container">
+                    <ul class="startHere">
+                        <li>Content</li>
+                        <li>Content</li>
+                        <li>Content</li>
+                        <li>Content</li>
+                        <li>Content</li>
+                        <li>Content</li>
+                        <li>Content</li>
+                        <li>Content</li>
+                        <li>Content</li>
+                        <li>Content</li>
+                        <li>Content</li>
+                        <li>Content</li>
+                    </ul>
+
+
+                    <a href="#" id="loadMore">Load More</a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="note" >
+        <h1>Notes</h1>
+        <p><b>Citation! Citation! Citation!</b></p>
+    </div>
+    <div id="usage" >
+        <h1>Usage</h1>
+        <div class="table_wrapper">
+            <table class="inPageTable">
+                <thead>
+                <tr>
+                    <th>Sample</th>
+                    <th>Location</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><a href="#" class="list-group-item active">Cras justo odio</a></td>
+                    <td>Tab bar</td>
+                </tr>
+                <tr>
+                    <td><a href="#" class="">Morbi leo risus</a></td>
+                    <td>Article inline links</td>
+                </tr>
+
+                </tbody>
+            </table></div>
+    </div>
+    <h1 class="spacer">End</h1>
+
+
+
+</div>
+
+<iframe src="../nav.html" width="240px" class="navIframe">
+    <p>Your browser does not support iframes.</p>
+</iframe>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="../assets/js/app.js"></script>
+<script>
+    /*
+     Load more content with jQuery - May 21, 2013
+     (c) 2013 @ElmahdiMahmoud
+     */
+
+    $(function () {
+        $(".startHere li").slice(0, 4).show();
+
+        $("#loadMore").on('click', function (e) {
+            e.preventDefault();
+            $(".startHere li:hidden").slice(0, 4).slideDown();
+            if ($(".startHere li:hidden").length == 0) {
+                $("#loadMore").fadeOut();
+            }
+        });
+    });
+
+</script>
+</body>
+</html>
